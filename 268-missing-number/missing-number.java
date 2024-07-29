@@ -1,16 +1,11 @@
 class Solution {
-    public int missingNumber(int[] arr) {
-        Arrays.sort(arr);
-        int n = arr.length;
-        int missingNum = n;
-
-        for (int i = 0; i <n; i++) {
-            if(arr[i] != i) {
-                missingNum = i;
-                break;
-            }
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        int sumOfNums = 0;
+        for(int i=0; i<n; i++) {
+            sumOfNums += nums[i];
         }
-
-        return missingNum;
+        int sumOfNaturalNums = n*(n+1)/2;
+        return sumOfNaturalNums - sumOfNums;
     }
 }
