@@ -18,6 +18,7 @@ class Solution {
                     sol.add(nums[right]);
                     result.add(sol);
                     left++;
+                    // skip duplicates
                     while(nums[left] == nums[left-1] && left < right)
                         left++;
                 } else if (sum > 0) {
