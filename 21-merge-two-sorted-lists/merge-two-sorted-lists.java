@@ -50,18 +50,24 @@ class Solution {
                 }
             }
         }
-        while (p != null) {
-            ListNode node = new ListNode(p.val);
-            ansNext.next = node;
-            ansNext = node;
-            p = p.next;
-        }
-        while (q != null) {
-            ListNode node = new ListNode(q.val);
-            ansNext.next = node;
-            ansNext = node;
-            q = q.next;
-        }
+        // this portion can be simplified
+        // while (p != null) {
+        //     ListNode node = new ListNode(p.val);
+        //     ansNext.next = node;
+        //     ansNext = node;
+        //     p = p.next;
+        // }
+        // while (q != null) {
+        //     ListNode node = new ListNode(q.val);
+        //     ansNext.next = node;
+        //     ansNext = node;
+        //     q = q.next;
+        // }
+
+        if(p != null)
+            ansNext.next = p;
+        if(q != null)
+            ansNext.next = q;
         return ans;
     }
 }
