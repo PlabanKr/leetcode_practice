@@ -11,16 +11,28 @@ class Solution {
     // }
 
     // HASHMAP
+    // public boolean containsDuplicate(int[] nums) {
+    //     // store frequency of a number
+    //     HashMap<Integer, Integer> hm = new HashMap<>();
+
+    //     for(int i = 0; i < nums.length; i++) {
+    //         if(!hm.containsKey(nums[i])) {
+    //             hm.put(nums[i], 1);
+    //         } else {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // HashSet
     public boolean containsDuplicate(int[] nums) {
-        // store frequency of a number
-        HashMap<Integer, Integer> hm = new HashMap<>();
+        HashSet<Integer> hSet = new HashSet<>();
 
         for(int i = 0; i < nums.length; i++) {
-            if(!hm.containsKey(nums[i])) {
-                hm.put(nums[i], 1);
-            } else {
+            if(hSet.contains(nums[i]))
                 return true;
-            }
+            hSet.add(nums[i]);
         }
         return false;
     }
